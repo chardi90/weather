@@ -29,7 +29,9 @@ ul {
 }
 
 li {
+  border-bottom: 1px solid #00bbf0;
   list-style: none;
+  padding: 0 0 1px 0;
 }
 
 a {
@@ -137,9 +139,25 @@ a:hover {
 }
 
 .todays-icon {
-  font-size: 58px;
+  font-size: 60px;
+  margin-left: 10px;
+  margin-top: 4px;
 }
 
 .todays-temp {
   font-size: 40px;
+}
+
+ul.todays-stats {
+  margin-right: 20px;
+}
+
+.sun {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul.forecast {
+  margin-left: 20px;
+  margin-right: 20px;
 }

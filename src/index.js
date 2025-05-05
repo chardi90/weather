@@ -11,13 +11,41 @@ function refreshWeather(response) {
   let currentDescription = response.data.condition.description;
   let currentWindSpeedElement = document.querySelector("#wind-speed-today");
   let currentWindSpeed = response.data.wind.speed;
+
+  function formatWindDirection(degree) {
+    if (degree >= 348.75 || degree < 11.25) return "N";
+    if (degree >= 11.25 && degree < 33.75) return "NNE";
+    if (degree >= 33.75 && degree < 56.25) return "NE";
+    if (degree >= 56.25 && degree < 78.75) return "ENE";
+    if (degree >= 78.75 && degree < 101.25) return "E";
+    if (degree >= 101.25 && degree < 123.75) return "ESE";
+    if (degree >= 123.75 && degree < 146.25) return "SE";
+    if (degree >= 146.25 && degree < 168.75) return "SSE";
+    if (degree >= 168.75 && degree < 191.25) return "S";
+    if (degree >= 191.25 && degree < 213.75) return "SSW";
+    if (degree >= 213.75 && degree < 236.25) return "SW";
+    if (degree >= 236.25 && degree < 258.75) return "WSW";
+    if (degree >= 258.75 && degree < 281.25) return "W";
+    if (degree >= 281.25 && degree < 303.75) return "WNW";
+    if (degree >= 303.75 && degree < 326.25) return "NW";
+    if (degree >= 326.25 && degree < 348.75) return "NNW";
+  }
   let currentWindDirectionElement =
     document.querySelector("#wind-degree-today");
-  let currentWindDirection = response.data.wind.degree;
+  let degree = response.data.wind.degree;
+  let currentWindDirection = formatWindDirection(degree);
   let currentHumidityElement = document.querySelector("#humidity-today");
   let currentHumidity = response.data.temperature.humidity;
+
+  function formatPressure(pressure) {
+    if (pressure >= 1020) return "High";
+    if (pressure >= 1000 && pressure < 1020) return "Normal";
+    if (pressure >= 980 && pressure < 1000) return "Low";
+    if (pressure >= 0 && pressure < 980) return "Very low";
+  }
   let currentPressureElement = document.querySelector("#pressure-today");
-  let currentPressure = response.data.temperature.pressure;
+  let pressure = Number(response.data.temperature.pressure);
+  let currentPressure = formatPressure(pressure);
 
   cityElement.innerHTML = `${currentCity}, ${currentCountry}`;
   currentTemperatureElement.innerHTML = Math.round(currentTemperature);
@@ -26,7 +54,7 @@ function refreshWeather(response) {
   currentWindSpeedElement.innerHTML = `${currentWindSpeed}Km/h`;
   currentWindDirectionElement.innerHTML = currentWindDirection;
   currentHumidityElement.innerHTML = `${currentHumidity}%`;
-  currentPressureElement.innerHTML = currentPressure;
+  currentPressureElement.innerHTML = `${currentPressure} (${pressure})`;
 }
 
 function searchCity(city) {

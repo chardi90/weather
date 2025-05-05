@@ -166,3 +166,23 @@ ul.forecast li {
   display: flex;
   justify-content: space-between;
 }
+
+ul.forecast li .day {
+  font-size: 16px;
+}
+
+ul.forecast li .date {
+  font-size: 12px;
+}
+
+ul.forecast li .icon {
+  font-size: 30px;
+}
+
+ul.forecast li .temp {
+  font-size: 16px;
+}
+
+ul.forecast li .temp-feels {
+  font-size: 12px;
+}

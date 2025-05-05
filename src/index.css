@@ -8,6 +8,7 @@ body {
 h1,
 h2,
 h3 {
+  color: #005792;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -29,7 +30,7 @@ footer {
 
 .box {
   background: #fff;
-  border: 1px solid #fff;
+  border: none;
   border-radius: 15px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   margin: 0 auto;
@@ -45,7 +46,48 @@ div.box {
   margin-top: 10px;
 }
 
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: 15px;
+  width: auto;
+}
+
 .split-text {
   display: flex;
   justify-content: space-between;
+}
+
+.search-input,
+.search-button {
+  background-color: #005792;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.search-input {
+  width: 40%;
+  min-width: 150px;
+}
+
+::placeholder {
+  color: #00bbf0;
+}
+
+.search-button {
+  transition: all 200ms ease-in-out;
+  width: 20%;
+  margin: 0;
+  min-width: 100px;
+}
+
+.search-button:hover {
+  background-color: #00bbf0;
+  cursor: pointer;
+  color: #00204a;
 }

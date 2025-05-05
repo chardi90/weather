@@ -30,9 +30,11 @@
         />
       </form>
     </header>
-    <div class="split-text box" id="current-city">
-      <h1 id="city-name">London</h1>
-      <h1 id="country-name">United Kingdom</h1>
+    <div class="location box">
+      <h1 id="city-name">
+        <span id="current-city">London</span>,
+        <span id="country-name">United Kingdom</span>
+      </h1>
     </div>
     <div class="weather-description box" id="weather-description">
       <div class="split-text divider">
@@ -50,25 +52,42 @@
         <h3 id="current-date-time">Tuesday, 24 March 13:45</h3>
       </div>
       <div class="split-text">
-        <div class="left-side content" id="todays-details">
-          <span class="todays-icon" id="todays-icon">☀️</span>
-          <span class="todays-temp stat" id="todays-temp">12</span>
-          <span class="todays-temp-unit" id="todays-temp-unit">°C</span>
-          <br />
-          Feels like <span class="stat" id="today-feels-like">7</span>°C
-          <br />
-          <span id="todays-description">Cloudy</span>
+        <div class="todays-left-side content" id="todays-details">
+          <div class="todays-icon" id="todays-icon">☀️</div>
+          <div class="temp stat">
+            <span class="todays-temp data" id="todays-temp">12</span>
+            <span class="todays-temp-unit" id="todays-temp-unit">°C</span>
+            <br />
+            Feels like <span class="data" id="today-feels-like">7</span>°C
+          </div>
         </div>
-        <div class="right-side">
+
+        <div class="todays-right-side">
           <ul class="todays-stats" id="todays-stats">
             <li>
               Precipitation:
-              <span class="stat" id="precipitation-today">40</span>%
+              <span class="stat"
+                ><span class="data" id="precipitation-today">40</span>%</span
+              >
             </li>
-            <li>Wind: <span class="stat" id="windspeed-today">5</span>km/h</li>
-            <li>Humidity: <span class="stat" id="humidity-today">20</span>%</li>
+            <li>
+              Wind:
+              <span class="stat"
+                ><span class="data" id="windspeed-today">5</span
+                ><span id="wind-unit">km/h</span></span
+              >
+            </li>
+            <li>
+              Humidity:
+              <span class="stat"
+                ><span class="data" id="humidity-today">20</span>%</span
+              >
+            </li>
           </ul>
         </div>
+      </div>
+      <div class="todays-description">
+        Current Conditions: <span id="todays-description">Cloudy</span>
       </div>
     </div>
     <div class="sunrise-sunset box" id="sunrise-sunset">

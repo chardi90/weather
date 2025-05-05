@@ -39,7 +39,7 @@ a {
 
 footer {
   text-align: center;
-  font-weight: bold;
+  font-weight: 1000px;
   margin: 20px auto;
 }
 
@@ -50,7 +50,7 @@ footer {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   margin: 0 auto;
   max-width: 600px;
-  padding: 5px 20px 10px;
+  padding: 5px 25px 10px;
 }
 
 header.box {
@@ -116,8 +116,11 @@ a:hover {
 }
 
 .stat {
-  color: #fdb44b;
   font-weight: bold;
+}
+
+.data {
+  color: #fdb44b;
 }
 
 .divider {
@@ -127,4 +130,16 @@ a:hover {
 
 .content {
   margin-top: 5px;
+}
+
+.todays-left-side {
+  display: flex;
+}
+
+.todays-icon {
+  font-size: 58px;
+}
+
+.todays-temp {
+  font-size: 40px;
 }

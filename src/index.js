@@ -4,6 +4,7 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
   let cityElement = document.querySelector("#city-name");
   let currentCity = response.data.city;
+  let countryElement = document.querySelector("#country-name");
   let currentCountry = response.data.country;
   let currentTemperatureElement = document.querySelector("#todays-temp");
   let currentTemperature = response.data.temperature.current;
@@ -22,14 +23,19 @@ function refreshWeather(response) {
   let currentPressureElement = document.querySelector("#pressure-today");
   let pressure = Number(response.data.temperature.pressure);
   let currentPressure = formatPressure(pressure);
+  let iconElement = document.querySelector("#todays-icon");
+
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather-icon"
+              class="todays-icon">`;
   currentDateElement.innerHTML = formatDate(date);
-  cityElement.innerHTML = `${currentCity}, ${currentCountry}`;
+  cityElement.innerHTML = `${currentCity}`;
+  countryElement.innerHTML = `${currentCountry}`;
   currentTemperatureElement.innerHTML = Math.round(currentTemperature);
   currentFeelsElement.innerHTML = Math.round(currentFeelsLike);
   currentdescriptionElement.innerHTML = `${currentDescription}`;
-  currentWindSpeedElement.innerHTML = `${currentWindSpeed}Km/h`;
+  currentWindSpeedElement.innerHTML = `${currentWindSpeed}`;
   currentWindDirectionElement.innerHTML = currentWindDirection;
-  currentHumidityElement.innerHTML = `${currentHumidity}%`;
+  currentHumidityElement.innerHTML = `${currentHumidity}`;
   currentPressureElement.innerHTML = `${currentPressure} (${pressure})`;
 }
 

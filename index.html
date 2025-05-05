@@ -27,18 +27,49 @@
     </header>
     <div class="weather-description" id="weather-description">
       <h3>Today's weather</h3>
-      <h3>Tonight</h3>
+      <h3>Tonight's weather</h3>
+      <p id="todays-summary">
+        <span id="daytime-summary">Cloudy</span>
+        <span id="nighttime-summary">Overcast</span>
+      </p>
     </div>
     <div class="current-weather" id="current-weather">
-      <h3>Current Weather</h3>
+      <h3>Current weather</h3>
       <h3>Time</h3>
+      <p id="todays-details">
+        <span class="todays-icon" id="todays-icon">☀️</span
+        ><span class="todays-temp" id="todays-temp">12</span
+        ><span class="todays-temp-unit" id="todays-temp-unit">°C</span>
+        <br />
+        Feels like <span id="today-feels-like">7</span>°C
+        <br />
+        <span id="todays-description">Cloudy</span>
+      </p>
+      <ul class="todays-stats" id="todays-stats">
+        <li id="precipitation-today">40%</li>
+        <li id="windspeed-today">5km/h</li>
+        <li id="humidity-today">20%</li>
+      </ul>
     </div>
     <div class="sunrise-sunset" id="sunrise-sunset">
       <h3>Sunrise</h3>
       <h3>Sunset</h3>
+      <p>
+        <span id="sunrise-time">08:03</span>
+        <span id="sunset-time">19:32</span>
+      </p>
     </div>
     <div class="forecast" id="forecast">
-      <h3>7-day Weather</h3>
+      <h3>7-day weather</h3>
+      <ul class="forecast-details" id="forecast-details">
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+        <li>Sun</li>
+      </ul>
     </div>
     <footer>
       Coded by

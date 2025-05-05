@@ -11,10 +11,15 @@ h3 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  text-transform: uppercase;
 }
 
 header {
   line-height: 15px;
+}
+
+li {
+  list-style: none;
 }
 
 footer {
@@ -25,11 +30,11 @@ footer {
 .box {
   background: #fff;
   border: 1px solid #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   margin: 0 auto;
   max-width: 600px;
-  padding: 15px;
+  padding: 5px 20px 10px;
 }
 
 header.box {
@@ -38,4 +43,9 @@ header.box {
 
 div.box {
   margin-top: 10px;
+}
+
+.split-text {
+  display: flex;
+  justify-content: space-between;
 }

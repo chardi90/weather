@@ -29,42 +29,54 @@
           id="search-button"
         />
       </form>
-      <h1 id="city-name">London</h1>
-      <h2 id="country-name">United Kingdom</h2>
+      <div class="split-text" id="current-city">
+        <h1 id="city-name">London</h1>
+        <h2 id="country-name">United Kingdom</h2>
+      </div>
     </header>
     <div class="weather-description box" id="weather-description">
-      <h3>Today's weather</h3>
-      <h3>Tonight's weather</h3>
-      <p id="todays-summary">
+      <div class="split-text">
+        <h3>Today's weather</h3>
+        <h3>Tonight's weather</h3>
+      </div>
+      <div class="split-text" id="todays-summary">
         <span id="daytime-summary">Cloudy</span>
         <span id="nighttime-summary">Overcast</span>
-      </p>
+      </div>
     </div>
     <div class="current-weather box" id="current-weather">
-      <h3>Current weather</h3>
-      <h3>Time</h3>
-      <p id="todays-details">
-        <span class="todays-icon" id="todays-icon">☀️</span
-        ><span class="todays-temp" id="todays-temp">12</span
-        ><span class="todays-temp-unit" id="todays-temp-unit">°C</span>
-        <br />
-        Feels like <span id="today-feels-like">7</span>°C
-        <br />
-        <span id="todays-description">Cloudy</span>
-      </p>
-      <ul class="todays-stats" id="todays-stats">
-        <li id="precipitation-today">40%</li>
-        <li id="windspeed-today">5km/h</li>
-        <li id="humidity-today">20%</li>
-      </ul>
+      <div class="split-text">
+        <h3>Current weather</h3>
+        <h3 id="current-date-time">Tuesday, 24 March 13:45</h3>
+      </div>
+      <div class="split-text">
+        <div class="left-side" id="todays-details">
+          <span class="todays-icon" id="todays-icon">☀️</span>
+          <span class="todays-temp" id="todays-temp">12</span>
+          <span class="todays-temp-unit" id="todays-temp-unit">°C</span>
+          <br />
+          Feels like <span id="today-feels-like">7</span>°C
+          <br />
+          <span id="todays-description">Cloudy</span>
+        </div>
+        <div class="right-side">
+          <ul class="todays-stats" id="todays-stats">
+            <li>Precipitation: <span id="precipitation-today">40</span>%</li>
+            <li>Wind: <span id="windspeed-today">5</span>km/h</li>
+            <li>Humidity: <span id="humidity-today">20</span>%</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="sunrise-sunset box" id="sunrise-sunset">
-      <h3>Sunrise</h3>
-      <h3>Sunset</h3>
-      <p>
+      <div class="split-text">
+        <h3>Sunrise</h3>
+        <h3>Sunset</h3>
+      </div>
+      <div class="split-text">
         <span id="sunrise-time">08:03</span>
         <span id="sunset-time">19:32</span>
-      </p>
+      </div>
     </div>
     <div class="forecast box" id="forecast">
       <h3>7-day weather</h3>

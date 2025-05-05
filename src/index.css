@@ -173,6 +173,7 @@ ul.forecast {
 ul.forecast li {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
 ul.forecast li .day {
@@ -181,6 +182,10 @@ ul.forecast li .day {
 
 ul.forecast li .date {
   font-size: 12px;
+}
+
+ul.forecast li .forecast-icon {
+  width: 40px;
 }
 
 ul.forecast li .temp {

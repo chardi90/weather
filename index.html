@@ -6,7 +6,40 @@
     <title>Weather</title>
   </head>
   <body>
-    <h1>City</h1>
+    <header>
+      <form id="city-search">
+        <input
+          type="search"
+          name="search-input"
+          placeholder="Type a city..."
+          class="search-input"
+          id="search-input"
+        />
+        <input
+          type="submit"
+          value="Search"
+          class="search-button"
+          id="search-button"
+        />
+      </form>
+      <h1 id="city-name">London</h1>
+      <h2 id="country-name">United Kingdom</h2>
+    </header>
+    <div class="weather-description" id="weather-description">
+      <h3>Today's weather</h3>
+      <h3>Tonight</h3>
+    </div>
+    <div class="current-weather" id="current-weather">
+      <h3>Current Weather</h3>
+      <h3>Time</h3>
+    </div>
+    <div class="sunrise-sunset" id="sunrise-sunset">
+      <h3>Sunrise</h3>
+      <h3>Sunset</h3>
+    </div>
+    <div class="forecast" id="forecast">
+      <h3>7-day Weather</h3>
+    </div>
     <footer>
       Coded by
       <a href="https://github.com/chardi90" target="_blank">Clare Harding</a>

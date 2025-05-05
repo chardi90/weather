@@ -25,18 +25,18 @@ function refreshWeather(response) {
   let currentPressure = formatPressure(pressure);
   let iconElement = document.querySelector("#todays-icon");
 
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather-icon"
-              class="todays-icon">`;
   currentDateElement.innerHTML = formatDate(date);
   cityElement.innerHTML = `${currentCity}`;
   countryElement.innerHTML = `${currentCountry}`;
   currentTemperatureElement.innerHTML = Math.round(currentTemperature);
   currentFeelsElement.innerHTML = Math.round(currentFeelsLike);
   currentdescriptionElement.innerHTML = `${currentDescription}`;
-  currentWindSpeedElement.innerHTML = `${currentWindSpeed}`;
+  currentWindSpeedElement.innerHTML = `${currentWindSpeed}Km/h`;
   currentWindDirectionElement.innerHTML = currentWindDirection;
-  currentHumidityElement.innerHTML = `${currentHumidity}`;
+  currentHumidityElement.innerHTML = `${currentHumidity}%`;
   currentPressureElement.innerHTML = `${currentPressure} (${pressure})`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather-icon"
+              class="todays-icon">`;
 }
 
 function formatPressure(pressure) {

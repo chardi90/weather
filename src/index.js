@@ -1,5 +1,4 @@
 function refreshWeather(response) {
-  console.log(response.data);
   let currentDateElement = document.querySelector("#current-date-time");
   let date = new Date(response.data.time * 1000);
   let cityElement = document.querySelector("#city-name");
@@ -135,7 +134,6 @@ function formatForecastDate(timestamp) {
   let date = new Date(timestamp * 1000);
   let month = date.getMonth() + 1;
   let day = date.getDate();
-  console.log(`${day}/${month}`);
 
   if (month < 10) {
     month = `0${month}`;
@@ -150,13 +148,10 @@ function formatForecastDate(timestamp) {
 function getForecast(city) {
   let apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {

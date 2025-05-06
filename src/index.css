@@ -64,9 +64,13 @@ a {
 }
 
 footer {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
   text-align: center;
-  font-weight: 1000px;
+  font-weight: bold;
   margin: 20px auto;
+  max-width: 600px;
+  padding: 10px 20px;
 }
 
 .box {
@@ -81,7 +85,7 @@ footer {
 
 header.box {
   background: #005792;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 div.box {

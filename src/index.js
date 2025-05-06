@@ -131,6 +131,22 @@ function formatDay(timestamp) {
   return days[date.getDay()];
 }
 
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  console.log(`${day}/${month}`);
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  if (day < 10) {
+    day = `0${day}`;
+  }
+
+  return `${day}/${month}`;
+}
+
 function getForecast(city) {
   let apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -152,7 +168,9 @@ function displayForecast(response) {
         <li>
           <span class="day-date"
             ><span class="day" id="day-0">${formatDay(day.time)}</span>
-            <div class="date" id="date-0">05/05</div></span
+            <div class="date" id="date-0">${formatForecastDate(
+              day.time
+            )}</div></span
           >
 
           <span class="temp">

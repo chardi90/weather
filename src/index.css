@@ -198,6 +198,10 @@ ul.forecast li {
   padding-top: 5px;
 }
 
+ul.forecast span.day-date {
+  padding-top: 5px;
+}
+
 ul.forecast li .day {
   font-size: 16px;
 }

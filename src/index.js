@@ -122,7 +122,56 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <ul class="forecast">
+        <li>
+          <span class="day-date"
+            ><span class="day" id="day-0">${day}</span>
+            <div class="date" id="date-0">05/05</div></span
+          >
+          <span id="icon-0">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              alt="weather-icon"
+              class="forecast-icon"
+            />
+          </span>
+          <span class="temp">
+            <div class="material-symbols-outlined">thermometer</div>
+            <div class="stat data">
+              12°C <span class="temp-feels">12°C</span>
+            </div>
+          </span>
+          <span class="conditions">
+            <div class="material-symbols-outlined">cloud</div>
+            <div class="description">Overcast</div>
+          </span>
+          <span class="wind">
+            <div class="material-symbols-outlined">air</div>
+            <div class="stat data">20Km/h</div>
+          </span>
+          <span class="humidity">
+            <div class="material-symbols-outlined">water_drop</div>
+            <div class="humity stat data">20%</div>
+          </span>
+        </li>
+      </ul>
+      `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#city-search");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Manchester");
+displayForecast();

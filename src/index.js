@@ -37,6 +37,8 @@ function refreshWeather(response) {
   currentPressureElement.innerHTML = `${currentPressure} (${pressure})`;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather-icon"
               class="todays-icon">`;
+
+  getForecast(response.data.city);
 }
 
 function formatPressure(pressure) {
@@ -122,7 +124,16 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
@@ -174,4 +185,3 @@ let searchFormElement = document.querySelector("#city-search");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Manchester");
-displayForecast();

@@ -6,6 +6,15 @@ body {
   font-style: normal;
 }
 
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: 15px;
+  width: auto;
+}
+
 h1,
 h3 {
   color: #00204a;
@@ -74,18 +83,26 @@ div.box {
   margin-top: 10px;
 }
 
-form {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  margin-left: auto;
-  margin-top: 15px;
-  width: auto;
-}
-
 .split-text {
   display: flex;
   justify-content: space-between;
+}
+
+.divider {
+  border-bottom: 3px solid #00bbf0;
+  padding: 0 0 3px 0;
+}
+
+.content {
+  margin-top: 5px;
+}
+
+.stat {
+  font-weight: bold;
+}
+
+.data {
+  color: #fdb44b;
 }
 
 .search-input,
@@ -122,28 +139,6 @@ form {
   color: #00204a;
 }
 
-a:hover {
-  color: #fdb44b;
-  text-decoration: underline;
-}
-
-.stat {
-  font-weight: bold;
-}
-
-.data {
-  color: #fdb44b;
-}
-
-.divider {
-  border-bottom: 3px solid #00bbf0;
-  padding: 0 0 3px 0;
-}
-
-.content {
-  margin-top: 5px;
-}
-
 .todays-left-side {
   display: flex;
 }
@@ -157,11 +152,6 @@ a:hover {
 }
 
 ul.todays-stats {
-  margin-right: 20px;
-}
-
-.sun-times {
-  margin-left: 20px;
   margin-right: 20px;
 }
 
@@ -194,4 +184,9 @@ ul.forecast li .temp {
 
 ul.forecast li .temp-feels {
   font-size: 12px;
+}
+
+a:hover {
+  color: #fdb44b;
+  text-decoration: underline;
 }

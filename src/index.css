@@ -157,6 +157,8 @@ div.location .box {
 }
 
 .todays-icon {
+  position: relative;
+  bottom: 3px;
   width: 100px;
 }
 
@@ -209,6 +211,8 @@ ul.forecast li .temp {
 }
 
 ul.forecast li .forecast-icon {
+  position: relative;
+  bottom: 3px;
   width: 60px;
 }
 

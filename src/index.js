@@ -124,6 +124,13 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -134,47 +141,57 @@ function getForecast(city) {
 function displayForecast(response) {
   console.log(response.data);
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
       <ul class="forecast">
         <li>
           <span class="day-date"
-            ><span class="day" id="day-0">${day}</span>
+            ><span class="day" id="day-0">${formatDay(day.time)}</span>
             <div class="date" id="date-0">05/05</div></span
           >
-          <span id="icon-0">
+
+          <span class="temp">
+            <div class="material-symbols-outlined">thermometer</div>
+            <div class="stat data">
+              ${Math.round(
+                day.temperature.maximum
+              )}°C <span class="temp-feels">${Math.round(
+          day.temperature.minimum
+        )}°C</span>
+            </div>
+          </span>
+
+          <span class="forecast-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              src="${day.condition.icon_url}"
               alt="weather-icon"
               class="forecast-icon"
             />
           </span>
-          <span class="temp">
-            <div class="material-symbols-outlined">thermometer</div>
-            <div class="stat data">
-              12°C <span class="temp-feels">12°C</span>
-            </div>
-          </span>
+
           <span class="conditions">
-            <div class="material-symbols-outlined">cloud</div>
-            <div class="description">Overcast</div>
+            <div class="material-symbols-outlined"></div>
+            <div class="description">${day.condition.description}</div>
           </span>
+
           <span class="wind">
             <div class="material-symbols-outlined">air</div>
-            <div class="stat data">20Km/h</div>
+            <div class="stat data">${day.wind.speed}Km/h</div>
           </span>
+
           <span class="humidity">
             <div class="material-symbols-outlined">water_drop</div>
-            <div class="humity stat data">20%</div>
+            <div class="humity stat data">${day.temperature.humidity}%</div>
           </span>
         </li>
       </ul>
       `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");

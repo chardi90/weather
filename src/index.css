@@ -182,12 +182,16 @@ ul.forecast li .date {
   font-size: 12px;
 }
 
-ul.forecast li .forecast-icon {
-  width: 50px;
-}
-
 ul.forecast li .temp {
   font-size: 16px;
+}
+
+ul.forecast li .forecast-icon {
+  width: 60px;
+}
+
+ul.forecast li .conditions {
+  width: 20%;
 }
 
 ul.forecast li .temp-feels {
